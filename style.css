@@ -21,13 +21,19 @@ body{
 
 button{
     font-family: 'IBM Plex Mono', monospace;
+    background: none;
+    font-size: 1.2em;
+    color: #F2F5EA;
+    margin: 10px;
+    border-color: #FF8966;
+    border-radius: 15px;
 }
 
 .options button{
-    width: 150px;
-    height: 30px;
+    width: 200px;
+    height: 50px;
 }
 
 .sizes button{
-    width: 80px;
+    width: 100px;
 }
