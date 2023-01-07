@@ -4,6 +4,7 @@ body{
     flex-direction: column;
     background: #2C363F;
     font-family: 'IBM Plex Mono', monospace;
+    color: #F2F5EA;
     margin: 0px;
 }
 
