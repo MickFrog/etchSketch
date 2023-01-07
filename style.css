@@ -23,6 +23,21 @@ body{
     gap: 50px;
 }
 
+/*Color Picker*/
+#colorPicker{
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    width: 200px;
+    height: 200px;
+}
+
+.options label{
+    font-size: 1.2em;
+}
+/* --colorPicker */
+
 .drawBoard{
     width: 720px;
     height: 720px;
