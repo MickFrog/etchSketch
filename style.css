@@ -4,10 +4,11 @@ body{
     flex-direction: column;
     background: #2C363F;
     font-family: 'IBM Plex Mono', monospace;
+    margin: 0px;
 }
 
 .heading{
-    color: white;
+    color: #F2F5EA;
     display: flex;
     justify-content: center;
     font-size: 3.2em;
@@ -17,6 +18,7 @@ body{
 .container{
     display: flex;
     justify-content: center;
+    flex: 1 0 auto;
     gap: 50px;
 }
 
@@ -49,4 +51,12 @@ button{
 
 .sizes button{
     width: 100px;
+}
+
+.footer{
+    margin-top: auto;
+    margin-bottom: 10px;
+    color: #F2F5EA;
+    display: flex;
+    justify-content: center;
 }
