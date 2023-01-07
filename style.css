@@ -25,7 +25,7 @@ body{
 .drawBoard{
     width: 720px;
     height: 720px;
-    background: white;
+    background: #F2F5EA;
 }
 
 .options{
