@@ -28,13 +28,18 @@ body{
     background-color: transparent;
     padding: 0px;
     margin: 0px;
-    border: none;
-    width: 200px;
-    height: 200px;
 }
 
 .options label{
     font-size: 1.2em;
+}
+
+input[type='color']{
+    appearance: none;
+    border: 0;
+    width: 200px;
+    height: 50px;
+    border-radius: 50%;
 }
 /* --colorPicker */
 
@@ -56,12 +61,14 @@ button{
     font-size: 1.2em;
     color: #F2F5EA;
     margin: 10px;
-    border-color: #FF8966;
+    border: 1px solid #FF8966;
     border-radius: 15px;
 }
 
 button:hover{
     background: black;
+    cursor: pointer;
+    color: yellow;
 }
 
 button:active{
