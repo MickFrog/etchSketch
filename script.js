@@ -1,16 +1,18 @@
 //Global variables
 let boxSize = 16;
 let boolErase = false;
+let boolRainbow = false;
 
 //Acquire container div and dimensions
 const container = document.getElementById("drawBoard");
 const containerWidth = container.clientWidth;
 const containerHeight = container.clientHeight;
 
-//Acquire buttons
+//Acquire input elements
 const bClear = document.getElementById('bClear');
 const bErase = document.getElementById('bErase');
-
+const bRainbow = document.getElementById('bRainbow');
+const colorPick = document.getElementById('colorPicker');
 
 //button event listeners
 bClear.addEventListener('click', function() {
@@ -33,8 +35,23 @@ bErase.addEventListener('click', function() {
     }
 })
 
+bRainbow.addEventListener('click', function() {
+    if(boolRainbow == false) {
+        boolRainbow = true;
+        bRainbow.style.background = 'black';
+        bRainbow.style.color = 'yellow';
+
+    } else {
+        boolRainbow = false;
+        bRainbow.style.background = 'transparent';
+        bRainbow.style.color = '#F2F5EA';
+    }
+})
+
 fillBoard(boxSize);
 
+
+//Functions
 function fillBoard(size) {
     for(let i = 0; i < size; i++){ 
         for(let j = 0; j < size; j++){
@@ -54,12 +71,23 @@ function drawBox(size){
         childDiv.addEventListener('mouseover', function(event) {
             if(boolErase == true) {
                 childDiv.style.background = 'transparent';
-                
+
             } else if(event.buttons == 1) {
-                childDiv.style.background = "black"; //add function that chooses colors
+                childDiv.style.background = `${getColor()}`; //add function that chooses colors
             }
         });
 
         container.appendChild(childDiv);
+    }
+}
+
+function getColor(){
+    if(boolRainbow == true) {
+        //generate hex color code
+        let randColor = Math.floor(Math.random()*16777215).toString(16); //16777215 is thw max color combinations. To base 16 string as default color codes.
+        return '#' + randColor;
+    } else {
+        console.log(colorPick.value);
+        return colorPick.value;
     }
 }
