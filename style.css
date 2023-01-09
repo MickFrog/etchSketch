@@ -47,6 +47,7 @@ input[type='color']{
     width: 720px;
     height: 720px;
     background: #F2F5EA;
+    display: flex;
 }
 
 .options{
