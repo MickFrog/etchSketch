@@ -69,7 +69,7 @@ function drawBox(size){
         childDiv.style.height = `${containerHeight/size}px`;
 
         childDiv.addEventListener('mouseover', function(event) {
-            if(boolErase == true) {
+            if(boolErase == true && event.buttons == 1) {
                 childDiv.style.background = 'transparent';
 
             } else if(event.buttons == 1) {
@@ -87,7 +87,6 @@ function getColor(){
         let randColor = Math.floor(Math.random()*16777215).toString(16); //16777215 is thw max color combinations. To base 16 string as default color codes.
         return '#' + randColor;
     } else {
-        console.log(colorPick.value);
         return colorPick.value;
     }
 }
