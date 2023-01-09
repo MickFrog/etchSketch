@@ -1,11 +1,22 @@
+//Global variables
+let boxSize = 16;
+
 //Acquire container div and dimensions
 const container = document.getElementById("drawBoard");
 const containerWidth = container.clientWidth;
 const containerHeight = container.clientHeight;
 
-let intervID;  //Global Changing div color interval ID
+//Acquire buttons
+const bClear = document.getElementById('bClear');
 
-fillBoard(64);
+bClear.addEventListener('click', function() {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+    fillBoard(boxSize);
+})
+
+fillBoard(boxSize);
 
 function fillBoard(size) {
     for(let i = 0; i < size; i++){ 
