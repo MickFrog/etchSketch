@@ -7,9 +7,9 @@ if (container) {
     //Create a single div
     let drawDiv = document.createElement('div');
     if(drawDiv) {
-        drawDiv.clientHeight = containerHeight / 16;
-        drawDiv.clientWidth = containerWidth / 16;
+        drawDiv.style.background = "black";
+        drawDiv.style.width = `${containerWidth/16}px`;
+        drawDiv.style.height = `${containerHeight/16}px`;
+        container.appendChild(drawDiv);
     }
-    drawDiv.style.background = "black";
-    container.appendChild(drawDiv);
 }
