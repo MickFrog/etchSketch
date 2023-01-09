@@ -2,6 +2,7 @@
 let boxSize = 16;
 let boolErase = false;
 let boolRainbow = false;
+let boolColor = true;
 
 //Acquire container div and dimensions
 const container = document.getElementById("drawBoard");
@@ -14,6 +15,10 @@ const bErase = document.getElementById('bErase');
 const bRainbow = document.getElementById('bRainbow');
 const bColor = document.getElementById('bColor');
 const colorPick = document.getElementById('colorPicker');
+
+//Initialisations
+bColor.style.background = 'black';
+bColor.style.color = 'yellow';
 
 btns = [bErase, bRainbow, bColor];
 
