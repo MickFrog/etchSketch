@@ -82,6 +82,11 @@ bColor.addEventListener('click', function() {
         boolRainbow = false;
         bColor.style.background = 'black';
         bColor.style.color = 'yellow';
+
+        //Set rainbow button inactive
+        bRainbow.style.background = 'transparent';
+        bRainbow.style.color = '#F2F5EA';
+
     } else {
         bColor.style.background = 'transparent';
         bColor.style.color = '#F2F5EA';
