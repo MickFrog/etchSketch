@@ -15,6 +15,9 @@ const bErase = document.getElementById('bErase');
 const bRainbow = document.getElementById('bRainbow');
 const bColor = document.getElementById('bColor');
 const colorPick = document.getElementById('colorPicker');
+const size16 = document.getElementById('b16');
+const size32 = document.getElementById('b32');
+const size64 = document.getElementById('b64');
 
 //Initialisations
 bColor.style.background = 'black';
