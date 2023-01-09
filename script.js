@@ -4,18 +4,21 @@ const containerWidth = container.clientWidth;
 const containerHeight = container.clientHeight;
     
 //Create a single div
-for(let i = 0; i < 16; i++){
-    for(let j = 0; j < 16; j++){
-        drawBox();
-    }
+function fillBoard(size) {
+    for(let i = 0; i < size; i++){
+        for(let j = 0; j < size; j++){
+            drawBox(size);
+        }
+    }    
 }
+fillBoard(64);
 
-function drawBox(){
+function drawBox(size){
     let childDiv = document.createElement('div');
     if(childDiv) {
-        childDiv.style.background = "black";
-        childDiv.style.width = `${containerWidth/16}px`;
-        childDiv.style.height = `${containerHeight/16}px`;
+        // childDiv.style.background = "black";
+        childDiv.style.width = `${containerWidth/size}px`;
+        childDiv.style.height = `${containerHeight/size}px`;
         container.appendChild(childDiv);
     }
 
