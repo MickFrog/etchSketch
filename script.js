@@ -3,17 +3,18 @@ const container = document.getElementById("drawBoard");
 const containerWidth = container.clientWidth;
 const containerHeight = container.clientHeight;
     
-//Create a single div
+fillBoard(64);
+
 function fillBoard(size) {
-    for(let i = 0; i < size; i++){
+    for(let i = 0; i < size; i++){ 
         for(let j = 0; j < size; j++){
             drawBox(size);
         }
     }    
 }
-fillBoard(64);
 
-function drawBox(size){
+//Draw a single element div
+function drawBox(size){ 
     let childDiv = document.createElement('div');
     if(childDiv) {
         // childDiv.style.background = "black";
