@@ -12,7 +12,10 @@ const containerHeight = container.clientHeight;
 const bClear = document.getElementById('bClear');
 const bErase = document.getElementById('bErase');
 const bRainbow = document.getElementById('bRainbow');
+const bColor = document.getElementById('bColor');
 const colorPick = document.getElementById('colorPicker');
+
+btns = [bErase, bRainbow, bColor];
 
 //button event listeners
 bClear.addEventListener('click', function() {
@@ -20,7 +23,7 @@ bClear.addEventListener('click', function() {
         container.removeChild(container.firstChild);
     }
     fillBoard(boxSize);
-})
+});
 
 bErase.addEventListener('click', function() {
     if(boolErase == false) {
@@ -33,7 +36,7 @@ bErase.addEventListener('click', function() {
         bErase.style.background = 'transparent';
         bErase.style.color = '#F2F5EA';
     }
-})
+});
 
 bRainbow.addEventListener('click', function() {
     if(boolRainbow == false) {
@@ -41,12 +44,35 @@ bRainbow.addEventListener('click', function() {
         bRainbow.style.background = 'black';
         bRainbow.style.color = 'yellow';
 
+        //Reset the rest
+        for(let i = 0; i < btns.length; i++){
+            if(btns[i] != bRainbow){
+                btns[i].style.background = 'transparent';
+                btns[i].style.color = '#F2F5EA';
+            }
+        }
+
     } else {
         boolRainbow = false;
         bRainbow.style.background = 'transparent';
         bRainbow.style.color = '#F2F5EA';
+
+        //Set color mode button active
+        bColor.style.background = 'black';
+        bColor.style.color = 'yellow';
     }
-})
+});
+
+bColor.addEventListener('click', function() {
+    if(boolColor == true) {
+        boolRainbow = false;
+        bColor.style.background = 'black';
+        bColor.style.color = 'yellow';
+    } else {
+        bColor.style.background = 'transparent';
+        bColor.style.color = '#F2F5EA';
+    }
+});
 
 fillBoard(boxSize);
 
