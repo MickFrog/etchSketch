@@ -26,6 +26,8 @@ bColor.style.color = 'yellow';
 size16.style.background = 'black';
 size16.style.color = 'yellow';
 
+fillBoard(boxSize);
+
 let btns = [bErase, bRainbow, bColor];
 let sizeBtns = [size16, size32, size64];
 
@@ -114,10 +116,6 @@ for(let i = 0; i < sizeBtns.length; i++) {
     });
 }
 
-
-fillBoard(boxSize);
-
-
 //Functions
 function fillBoard(size) {
     for(let i = 0; i < size; i++){ 
@@ -134,16 +132,16 @@ function drawBox(size){
         // childDiv.style.background = "black";
         childDiv.style.width = `${containerWidth/size}px`;
         childDiv.style.height = `${containerHeight/size}px`;
-
+        
         childDiv.addEventListener('mouseover', function(event) {
             if(boolErase == true && event.buttons == 1) {
                 childDiv.style.background = 'transparent';
-
+                
             } else if(event.buttons == 1) {
-                childDiv.style.background = `${getColor()}`; //add function that chooses colors
+                childDiv.style.background = `${getColor()}`; 
             }
         });
-
+        
         container.appendChild(childDiv);
     }
 }
