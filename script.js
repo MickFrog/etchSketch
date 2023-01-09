@@ -19,13 +19,18 @@ const size16 = document.getElementById('b16');
 const size32 = document.getElementById('b32');
 const size64 = document.getElementById('b64');
 
-//Initialisations
+//Feature Initialisations
 bColor.style.background = 'black';
 bColor.style.color = 'yellow';
 
-btns = [bErase, bRainbow, bColor];
+size16.style.background = 'black';
+size16.style.color = 'yellow';
+
+let btns = [bErase, bRainbow, bColor];
+let sizeBtns = [size16, size32, size64];
 
 //button event listeners
+//Clearing events
 bClear.addEventListener('click', function() {
     while (container.firstChild) {
         container.removeChild(container.firstChild);
@@ -46,6 +51,7 @@ bErase.addEventListener('click', function() {
     }
 });
 
+//Color modifying events
 bRainbow.addEventListener('click', function() {
     if(boolRainbow == false) {
         boolRainbow = true;
@@ -81,6 +87,28 @@ bColor.addEventListener('click', function() {
         bColor.style.color = '#F2F5EA';
     }
 });
+
+//Size manipulation events
+for(let i = 0; i < sizeBtns.length; i++) {
+    sizeBtns[i].addEventListener('click', function(){
+        sizeBtns[i].style.background = 'black';
+        sizeBtns[i].style.color = 'yellow';
+
+        //Set other buttons to deactivated mode
+        for(let j = 0; j < sizeBtns.length; j++){
+            if(sizeBtns[j] != sizeBtns[i]){
+                sizeBtns[j].style.background = 'transparent';
+                sizeBtns[j].style.color = '#F2F5EA';
+            }
+        }
+
+        //get box size for each button
+        boxSize = parseInt(sizeBtns[i].id.replace('b', ""));
+        //Trigger clear button to clear drawBoard whic also redraws divs
+        bClear.dispatchEvent(new Event('click'));
+    });
+}
+
 
 fillBoard(boxSize);
 
