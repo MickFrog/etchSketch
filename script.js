@@ -1,5 +1,6 @@
 //Global variables
 let boxSize = 16;
+let boolErase = false;
 
 //Acquire container div and dimensions
 const container = document.getElementById("drawBoard");
@@ -8,12 +9,28 @@ const containerHeight = container.clientHeight;
 
 //Acquire buttons
 const bClear = document.getElementById('bClear');
+const bErase = document.getElementById('bErase');
 
+
+//button event listeners
 bClear.addEventListener('click', function() {
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
     fillBoard(boxSize);
+})
+
+bErase.addEventListener('click', function() {
+    if(boolErase == false) {
+        boolErase = true;
+        bErase.style.background = 'black';
+        bErase.style.color = 'yellow';
+
+    } else {
+        boolErase = false;
+        bErase.style.background = 'transparent';
+        bErase.style.color = '#F2F5EA';
+    }
 })
 
 fillBoard(boxSize);
@@ -35,8 +52,11 @@ function drawBox(size){
         childDiv.style.height = `${containerHeight/size}px`;
 
         childDiv.addEventListener('mouseover', function(event) {
-            if(event.buttons == 1) {
-                childDiv.style.background = "black";
+            if(boolErase == true) {
+                childDiv.style.background = 'transparent';
+                
+            } else if(event.buttons == 1) {
+                childDiv.style.background = "black"; //add function that chooses colors
             }
         });
 
