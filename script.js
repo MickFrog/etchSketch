@@ -56,7 +56,7 @@ bErase.addEventListener('click', function() {
 //Color modifying events
 bRainbow.addEventListener('click', function() {
     if(boolRainbow == false) {
-        boolRainbow = true;
+        boolRainbow = true; boolErase = false;
         bRainbow.style.background = 'black';
         bRainbow.style.color = 'yellow';
 
