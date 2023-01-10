@@ -56,17 +56,13 @@ bErase.addEventListener('click', function() {
 //Color modifying events
 bRainbow.addEventListener('click', function() {
     if(boolRainbow == false) {
-        boolRainbow = true; boolErase = false;
+        boolRainbow = true;
         bRainbow.style.background = 'black';
         bRainbow.style.color = 'yellow';
 
-        //Reset the rest
-        for(let i = 0; i < btns.length; i++){
-            if(btns[i] != bRainbow){
-                btns[i].style.background = 'transparent';
-                btns[i].style.color = '#F2F5EA';
-            }
-        }
+        //Reset the color button
+        bColor.style.background = 'transparent';
+        bColor.style.color = '#F2F5EA'
 
     } else {
         boolRainbow = false;
